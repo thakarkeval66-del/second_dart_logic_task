@@ -1,5 +1,5 @@
 void main(){
-
+  print('--------------------------------------------------');
   final List<int> inputList = [9, 7, 6, 5, 9, 3, 4, 4, 2];
 
   print('Original list: $inputList');
@@ -14,7 +14,28 @@ void main(){
 
   // Step 3: Print the final sorted list
   print('Final sorted list (unique elements): $finalSortedList');
+  print('--------------------------------------------------');
+
+// Example with an empty list
+  final List<int> emptyList = [];
+  print('\nOriginal empty list: $emptyList');
+  final List<int> uniqueEmpty = _removeDuplicates(emptyList);
+  final List<int> sortedEmpty = _bubbleSort(uniqueEmpty);
+  print('Final sorted list (empty elements): $sortedEmpty');
+
+  print('--------------------------------------------------');
+
+  // Example with all duplicates
+  final List<int> allDuplicates = [5, 5, 5, 5, 5];
+  print('\nOriginal all duplicate list: $allDuplicates');
+  final List<int> uniqueAllDuplicates = _removeDuplicates(allDuplicates);
+  final List<int> sortedAllDuplicates = _bubbleSort(uniqueAllDuplicates);
+  print('Final sorted list (all duplicate elements): $sortedAllDuplicates');
+  print('--------------------------------------------------');
+
 }
+
+
 
 List<int> _bubbleSort(List<int> list) {
   if (list.isEmpty) {
